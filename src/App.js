@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { Component } from "react";
+import "./app.css";
+import Header from "./Header.js";
+import Technologies from "./Technologies.js";
 
 
 
-function App () {
+const App = () => {
   return (
-    <div className="wrapper">
-      <h1>Social network</h1>
-      <h2>test223332</h2>
-    
-
+    <div>
+      <Header />
+      <Technologies />
     </div>
-  )
-  
+  );
 }
-
 export default App;
-
