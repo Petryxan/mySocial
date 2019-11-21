@@ -1,0 +1,21 @@
+.nav {
+  grid-area: n;
+  background-color: rgb(230, 202, 142);
+  padding: 19px;
+  font-size: 17px;
+  font-style: inherit;
+  line-height: 30px;
+  
+}
+
+.item a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.item a.activeLink {
+  color: rgb(255, 166, 0);
+  font-style: italic;
+  font-size: 19px;
+}
