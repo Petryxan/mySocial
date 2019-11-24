@@ -7,7 +7,7 @@ const ProfileInfo = () => {
   return (
     <div>
       <div>
-        <img
+        <img className={s.img}
           src="https://www.pngkey.com/png/full/666-6663236_blue-header-png-6-png-image-blue.png">
           
         </img>

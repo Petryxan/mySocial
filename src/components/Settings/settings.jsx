@@ -5,9 +5,14 @@ import s from "./settings.module.css"
 const Settings = props => {
   return (
   <div className={s.main}>
-      Settings
+    Settings
+    
 
-  </div>
-  )
+   
+     </div>
+  
+    
+   
+    )
 };
 export default Settings;
