@@ -5,16 +5,24 @@ import Message from  ".//Message/Message"
 
 
 
-const Dialogs = props => {
+const Dialogs = (props) => {
   
 
-  let dialogsElements = props.dialogs.map(d => (
+  let dialogsElements = props.state.dialogs.map(d => (
     <DialogItem name={d.name} id={d.id} />
   ));
 
-  let messagesElements = props.messages.map(m => (
+  let messagesElements = props.state.messages.map(m => (
     <Message message={m.message} />
   ));
+
+  let newMessageElement = React.createRef();
+
+  let addMessage = ()=> {
+    let mes = newMessageElement.current.value;
+    alert (mes)
+  }
+
 
   return (
     <div className={s.dialogs}>
@@ -28,8 +36,24 @@ const Dialogs = props => {
         {messagesElements}
         {/* <Message message={messagesData[0].message} />
   <Message message={messagesData[1].message} /> */}
-      </div>
+      
+      <div>
+          <textarea ref={newMessageElement}></textarea>
+        </div>
+        <div>
+          <button onClick={addMessage}>Add Post</button>
+          <button>Remove</button>
+        </div>
+        </div>
     </div>
+
+    
   );
+
+  
+  
 };
 export default Dialogs;
+
+
+

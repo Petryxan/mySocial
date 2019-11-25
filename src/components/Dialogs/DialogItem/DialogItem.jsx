@@ -8,8 +8,12 @@ const DialogItem = props => {
     <div className={s.dialog + " " + s.active}>
       <NavLink to={path}>{props.name}</NavLink>
     </div>
-  );
-};
+    );
+  };
+    
+
+
+
 
 
 export default DialogItem;

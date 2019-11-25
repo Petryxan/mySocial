@@ -1,0 +1,29 @@
+.blockFriends {
+    display: grid;
+
+    max-width: 200px;
+
+    grid-template-areas: 
+    "f f f"
+    "f1 f1 f1"
+    "f1a f1a f1a";
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+
+};
+
+.headerFriends {
+
+
+grid-area: f;
+
+}
+.friends {
+
+    grid-area: f1;
+}
+.friendsAva {
+    grid-area: f1a;
+}
