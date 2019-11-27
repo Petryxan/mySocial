@@ -6,8 +6,8 @@ import s from "./ProfileInfo.module.css";
 const ProfileInfo = () => {
   return (
     <div>
-      <div>
-        <img className={s.img}
+      <div className={s.main_img}>
+        <img 
           src="https://www.pngkey.com/png/full/666-6663236_blue-header-png-6-png-image-blue.png">
           
         </img>

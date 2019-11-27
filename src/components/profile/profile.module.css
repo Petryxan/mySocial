@@ -1,11 +1,9 @@
 .content {
-   
-    grid-area: c;
-    background-color: rgb(218, 219, 231);
-    padding: 0px;
+  grid-area: c;
+  background-color: rgb(218, 219, 231);
+  padding: 0px;
 }
 .content img {
-    padding: 0;
-    height: 300px;
+  padding: 0;
+  height: 300px;
 }
-

@@ -3,19 +3,27 @@ import s from "./MyPosts.module.css";
 import Post from "./Post/Post.jsx";
 
 const MyPosts = (props) => {
-
-  let newPostElement = React.createRef(); 
+let postsElements = 
+props.posts.map ( p => <Post message={p.message} likesCount={p.likesCount}/>);
+  
+let newPostElement = React.createRef(); 
   
    
     
   let addPost = () => {
-    let text = newPostElement.current.value;
-    props.addPost (text);
+    
+    props.addPost ();
+    
   }
 
+  
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+  }
 
- let postsElements = 
-    props.posts.map(p => <Post message={p.message}  likesCount={p.likesCount}/>);
+//  let postsElements = 
+//     props.posts.map(p => <Post message={p.message}  likesCount={p.likesCount}/>);
 
 
   return (
@@ -23,19 +31,19 @@ const MyPosts = (props) => {
       <h3>My Posts</h3>
       <div>
         <div>
-          <textarea ref={newPostElement}></textarea>
+          <textarea ref={newPostElement} />
         </div>
         <div>
-          <button onClick={ addPost}>Add Post</button>
+          <button onClick={addPost}>Add Post</button>
           <button>Remove</button>
         </div>
       </div>
       <div className={s.posts}>
         {postsElements}
-        <Post likes=" 30" message="2 post" />
+        {/* <Post likes=" 30" message="2 post" />
         <Post likes=" 40" />
         <Post coment=" coment1" />
-        <Post coment=" coment2" />
+        <Post coment=" coment2" /> */}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./app.css";
 import Header from "./components/header/header";
@@ -9,16 +10,16 @@ import Settings from "./components/Settings/settings";
 
 import Profile from "./components/profile/profile";
 import { BrowserRouter, Route } from "react-router-dom";
-import state, { addPost } from "./components/redux/state";
+
 import Friends from "./components/friends/friends";
 
 const App = (props) => {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar />
-        {/* <Profile  posts={props.posts}/> */}
+        
         <div className="app-wrapper-content">
           <Route
             path="/dialogs"
@@ -32,8 +33,10 @@ const App = (props) => {
           <Route
             path="/profile"
             render={() => <Profile 
-            state={props.state.profilePage} 
-            addPost={props.addPost} />} />
+              profilePage={props.state.profilePage}
+              addPost={props.addPost}
+              updateNewPostText={props.updateNewPostText}
+              />} />
          
           <Route path="/News" component={News} />
           <Route path="/music" component={Music} />
@@ -42,7 +45,7 @@ const App = (props) => {
           <Route path="/friends" render={() => <Friends />} />
         </div>
       </div>
-    </BrowserRouter>
+    // </BrowserRouter>
   );
 };
 

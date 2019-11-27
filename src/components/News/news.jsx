@@ -1,23 +1,19 @@
 import React from "react";
 import s from "./news.module.css";
 
-
 const News = props => {
+  let textar = React.createRef();
 
-  let textarea = React.createRef();
-
-  let onclick = () => {
-    let output = textarea.current.value
-    alert(output)
+  let oncl = () => {
+    let output = textar.current.value;
+    alert(output);
   };
-  return (
+
+return (
   <div className={s.main}>
-      
-
-      <textarea ref={textarea}></textarea>
-      <button onClick={onclick}>enter</button>
-
+    <textarea ref={textar}></textarea>
+    <button onClick={oncl}>enter</button>
   </div>
-  )
+);
 };
 export default News;

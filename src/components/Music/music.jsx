@@ -1,5 +1,7 @@
 import React from "react";
-import s from "./music.module.css"
+import s from "./music.module.css";
+import ReactDOM from "react-dom";
+
 
 
 const Music = props => {
@@ -7,7 +9,14 @@ const Music = props => {
   <div className={s.main}>
       Music
 
+
   </div>
   )
+
+ 
 };
+
+
+
+
 export default Music;
