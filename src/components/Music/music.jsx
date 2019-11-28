@@ -4,19 +4,13 @@ import ReactDOM from "react-dom";
 
 
 
+
 const Music = props => {
-  return (
-  <div className={s.main}>
-      Music
 
-
-  </div>
-  )
-
- 
+  
+  return <div className={s.main}>
+    Music
+    </div>;
 };
-
-
-
 
 export default Music;

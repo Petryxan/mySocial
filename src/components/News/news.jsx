@@ -2,6 +2,7 @@ import React from "react";
 import s from "./news.module.css";
 
 const News = props => {
+  
   let textar = React.createRef();
 
   let oncl = () => {

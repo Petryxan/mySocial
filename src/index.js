@@ -15,9 +15,8 @@ let rerenderEntireTree = (state) => {
     <BrowserRouter>
       <App
         state={state}
-        addPost={store.addPost.bind(store)}
-        updateNewPostText={store.updateNewPostText.bind(store)}
-      />
+        dispatch={store.dispatch.bind(store)}
+       />
       
     </BrowserRouter>,
     document.getElementById("root")
@@ -33,3 +32,5 @@ store.subscribe(rerenderEntireTree);
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+  
+     

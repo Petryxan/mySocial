@@ -1,4 +1,3 @@
-
 import React from "react";
 import "./app.css";
 import Header from "./components/header/header";
@@ -13,31 +12,30 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import Friends from "./components/friends/friends";
 
-const App = (props) => {
+const App = props => {
   return (
-    // <BrowserRouter>
+    <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar />
-        
+
         <div className="app-wrapper-content">
           <Route
             path="/dialogs"
-            render={ () => 
-              <Dialogs
-                state={props.state.dialogsPage}/>
-             }
-          />  
-              
-           
+            render={() => <Dialogs state={props.state.dialogsPage} />}
+          />
+
           <Route
             path="/profile"
-            render={() => <Profile 
-              profilePage={props.state.profilePage}
-              addPost={props.addPost}
-              updateNewPostText={props.updateNewPostText}
-              />} />
-         
+            render={() => (
+              <Profile
+                profilePage={props.state.profilePage}
+               dispatch={props.dispatch}/>
+              )}
+          />
+  
+              
+            
           <Route path="/News" component={News} />
           <Route path="/music" component={Music} />
           {/* <Route path="/settings" component={Settings}/> */}
@@ -45,7 +43,7 @@ const App = (props) => {
           <Route path="/friends" render={() => <Friends />} />
         </div>
       </div>
-    // </BrowserRouter>
+    </BrowserRouter>
   );
 };
 
