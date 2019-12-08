@@ -1,28 +1,38 @@
 import React from "react";
 import DialogItem from ".//DialogItem/DialogItem";
 import s from "./Dialogs.module.css";
-import Message from  ".//Message/Message"
+import Message from ".//Message/Message";
+import { updateNewMessageBodyCreator, sendMessageCreator } from "../redux/state";
 
+const Dialogs = props => {
 
+let state = props.store.getState().dialogsPage;
 
-const Dialogs = (props) => {
-  
-
-  let dialogsElements = props.state.dialogs.map(d => (
+  let dialogsElements = state.dialogs.map(d => (
     <DialogItem name={d.name} id={d.id} />
   ));
 
-  let messagesElements = props.state.messages.map(m => (
+  let messagesElements = state.messages.map(m => (
     <Message message={m.message} />
   ));
 
+  let newMessageBody = state.newMessageBody;
+
   let newMessageElement = React.createRef();
 
-  let addMessage = ()=> {
+  let addMessage = () => {
     let mes = newMessageElement.current.value;
-    alert (mes)
-  }
+    alert(mes);
+  };
 
+  let onSendMessageClick = () => {
+    props.store.dispatch(sendMessageCreator())
+   }
+
+    let onNewMessageChange = (e) => {
+   let body = e.target .value
+   props.store.dispatch(updateNewMessageBodyCreator(body));
+    }
 
   return (
     <div className={s.dialogs}>
@@ -33,27 +43,26 @@ const Dialogs = (props) => {
        <DialogItem name={dialogsData[2].name} id={dialogsData[2].id}/> */}
       </div>
       <div className={s.messages}>
-        {messagesElements}
-        {/* <Message message={messagesData[0].message} />
-  <Message message={messagesData[1].message} /> */}
-      
-      <div>
-          <textarea ref={newMessageElement}></textarea>
-        </div>
+        <div>{messagesElements}</div>
         <div>
-          <button onClick={addMessage}>Add Post</button>
-          <button>Remove</button>
+          <div>
+            {" "}
+            <textarea value = {newMessageBody}
+            onChange = {onNewMessageChange}
+            placeholder="Enter your message"></textarea>
+          </div>
+          <div>
+            <button
+              onClick= {onSendMessageClick}
+              
+            ></button>
+          </div>
+
+          {/* <Message message={messagesData[0].message} />
+        <Message message={messagesData[1].message} /> */}
         </div>
-        </div>
+      </div>
     </div>
-
-    
   );
-
-  
-  
 };
 export default Dialogs;
-
-
-

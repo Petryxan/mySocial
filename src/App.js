@@ -11,6 +11,7 @@ import Profile from "./components/profile/profile";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Friends from "./components/friends/friends";
+import store from "./components/redux/state";
 
 const App = props => {
   return (
@@ -22,7 +23,7 @@ const App = props => {
         <div className="app-wrapper-content">
           <Route
             path="/dialogs"
-            render={() => <Dialogs state={props.state.dialogsPage} />}
+            render={() => <Dialogs store={props.store}  />}
           />
 
           <Route
