@@ -2,7 +2,7 @@ import React from "react";
 import DialogItem from ".//DialogItem/DialogItem";
 import s from "./Dialogs.module.css";
 import Message from ".//Message/Message";
-import { updateNewMessageBodyCreator, sendMessageCreator } from "../redux/state";
+import { updateNewMessageBodyCreator, sendMessageCreator } from "../redux/dialogs-reducer";
 
 const Dialogs = props => {
 
@@ -55,7 +55,7 @@ let state = props.store.getState().dialogsPage;
             <button
               onClick= {onSendMessageClick}
               
-            ></button>
+            >Send message</button>
           </div>
 
           {/* <Message message={messagesData[0].message} />
