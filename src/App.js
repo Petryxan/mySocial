@@ -11,7 +11,7 @@ import Profile from "./components/profile/profile";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Friends from "./components/friends/friends";
-import store from "./components/redux/state";
+import store from "./components/redux/store";
 
 const App = props => {
   return (

@@ -11,6 +11,6 @@ const Music = props => {
   return <div className={s.main}>
     Music
     </div>;
-};
+}
 
 export default Music;
